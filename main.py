@@ -9,8 +9,10 @@ def yt():
         YTMusic.setup(filepath="headers_auth.json")
     
     ytmusic = YTMusic('browser.json')
+    #Creation of the playlist
     playlist_name = 'Teste'
     playlist_id = ytmusic.create_playlist(playlist_name, '',privacy_status="PRIVATE")
+    #Opening songs.txt file and searching it on YoutubeMusic
     with open('songs.txt','r',encoding='utf-8') as file:
         for line in file:
             search_results = ytmusic.search(line ,filter='songs')
